@@ -10,6 +10,8 @@ import Foundation
 
 protocol LocalListDelegate {
     
-    func LocalList(names: String, location: String, distance: String)
+    func ShowLocationData(location: NSObject)
+    
+//    func LocalList(names: String, location: String, distance: String)
     
 }

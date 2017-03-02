@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -159,10 +158,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="7Gf-h9-Mwr" kind="presentation" identifier="showSegue" id="jgR-rE-ZAW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgg-YU-8vZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3185" y="139"/>
+            <point key="canvasLocation" x="3268" y="139"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="w60-45-WS1">
@@ -176,12 +178,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fRn-Bb-doX">
-                                <rect key="frame" x="100" y="72" width="175" height="175"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fRn-Bb-doX" secondAttribute="height" multiplier="1:1" id="zQo-Y2-D9m"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:  Here is some information about this location." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltf-18-IiW">
                                 <rect key="frame" x="16" y="255" width="343" height="61"/>
                                 <constraints>
@@ -242,60 +238,56 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcW-If-Nhb" customClass="GMSMapView">
+                                <rect key="frame" x="24" y="72" width="327" height="175"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="fRn-Bb-doX" firstAttribute="top" secondItem="u9a-pS-0uC" secondAttribute="bottom" constant="8" id="3F9-TL-3tq"/>
+                            <constraint firstItem="ltf-18-IiW" firstAttribute="top" secondItem="zcW-If-Nhb" secondAttribute="bottom" constant="8" symbolic="YES" id="5oc-5B-WrE"/>
                             <constraint firstItem="Uc7-Gn-U3z" firstAttribute="top" secondItem="ltf-18-IiW" secondAttribute="bottom" constant="8" id="6tH-pi-W2C"/>
                             <constraint firstItem="CrU-8E-Zqc" firstAttribute="leading" secondItem="tpX-kF-qfS" secondAttribute="leadingMargin" constant="8" id="7OV-NA-78W"/>
                             <constraint firstItem="ltf-18-IiW" firstAttribute="trailing" secondItem="tpX-kF-qfS" secondAttribute="trailingMargin" id="Btm-Vb-79m"/>
                             <constraint firstItem="43N-Vb-3MT" firstAttribute="leading" secondItem="tpX-kF-qfS" secondAttribute="leadingMargin" constant="8" id="EfY-IK-7JF"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="43N-Vb-3MT" secondAttribute="bottom" constant="-34" id="Ex0-pb-lFi"/>
                             <constraint firstItem="Uc7-Gn-U3z" firstAttribute="trailing" secondItem="tpX-kF-qfS" secondAttribute="trailingMargin" id="MYO-mJ-RuK"/>
                             <constraint firstItem="Uc7-Gn-U3z" firstAttribute="leading" secondItem="tpX-kF-qfS" secondAttribute="leadingMargin" id="PwH-76-beJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="43N-Vb-3MT" secondAttribute="trailing" constant="8" id="SaN-wz-Swj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CrU-8E-Zqc" secondAttribute="trailing" constant="8" id="U7Y-os-2Xa"/>
                             <constraint firstItem="43N-Vb-3MT" firstAttribute="top" secondItem="CrU-8E-Zqc" secondAttribute="bottom" constant="8" id="UyC-Ol-BMp"/>
+                            <constraint firstItem="zcW-If-Nhb" firstAttribute="leading" secondItem="CrU-8E-Zqc" secondAttribute="leading" id="Xoq-wN-iQL"/>
                             <constraint firstItem="CrU-8E-Zqc" firstAttribute="top" secondItem="Uc7-Gn-U3z" secondAttribute="bottom" constant="8" id="add-aQ-WgI"/>
                             <constraint firstItem="ltf-18-IiW" firstAttribute="leading" secondItem="tpX-kF-qfS" secondAttribute="leadingMargin" id="agL-rQ-TMc"/>
-                            <constraint firstItem="ltf-18-IiW" firstAttribute="top" secondItem="fRn-Bb-doX" secondAttribute="bottom" constant="8" id="aoE-N2-qJE"/>
-                            <constraint firstItem="fRn-Bb-doX" firstAttribute="leading" secondItem="tpX-kF-qfS" secondAttribute="leadingMargin" constant="84" id="cbF-Aq-3zu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fRn-Bb-doX" secondAttribute="trailing" constant="84" id="mqL-HX-MOT"/>
-                            <constraint firstItem="ltf-18-IiW" firstAttribute="top" secondItem="fRn-Bb-doX" secondAttribute="bottom" constant="8" id="z0j-Y8-N8W"/>
+                            <constraint firstItem="zcW-If-Nhb" firstAttribute="top" secondItem="u9a-pS-0uC" secondAttribute="bottom" constant="8" symbolic="YES" id="jMK-xL-Ma1"/>
+                            <constraint firstItem="zcW-If-Nhb" firstAttribute="trailing" secondItem="CrU-8E-Zqc" secondAttribute="trailing" id="nxt-Z7-Obf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DM6-Uk-avw">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="gFC-66-gXv"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="gFC-66-gXv">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="iab-AQ-gGi" id="tZX-rX-0Zu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dayTableView" destination="Uc7-Gn-U3z" id="hvc-R6-bvc"/>
+                        <outlet property="descriptionLabelOutlet" destination="ltf-18-IiW" id="vTd-FA-var"/>
+                        <outlet property="locationMapView" destination="zcW-If-Nhb" id="h5c-Fe-Oxf"/>
+                        <outlet property="servicesLabelOutlet" destination="43N-Vb-3MT" id="mwV-Br-sgW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAG-tU-gf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961" y="948"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UNR-ar-2JP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y6P-Tf-B3P" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZOK-4C-0J9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="iab-AQ-gGi" kind="relationship" relationship="rootViewController" id="wQM-im-xDC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cBy-NX-J4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1229.5999999999999" y="947.67616191904051"/>
+            <point key="canvasLocation" x="3268" y="933.28335832083962"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aYe-n2-ce3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YbO-NR-ddO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9vb-sw-bs6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9vb-sw-bs6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -313,7 +305,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vLl-Gd-cYh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cAK-J1-SZ7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cAK-J1-SZ7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -325,6 +317,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0d-jW-S1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2246" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rXV-NT-Q3m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Gf-h9-Mwr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="apb-K7-0HJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iab-AQ-gGi" kind="relationship" relationship="rootViewController" id="yh7-cz-vJZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYc-6f-iaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2246" y="933"/>
         </scene>
     </scenes>
 </document>

@@ -12,7 +12,6 @@ class LocalListViewController: UITableViewController {
     
 // Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-    var delegate: LocalListDelegate?
     var destinations = [Shelters]()
     
     
@@ -39,11 +38,11 @@ class LocalListViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // Table View Methods :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// Table View Methods :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return destinations.count
     }
-    
+    /// Define Cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
@@ -53,12 +52,50 @@ class LocalListViewController: UITableViewController {
         return cell
     }
     
+    /// Segue when accessory is selected
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        // perform segue with all info
+        performSegue(withIdentifier: "showSegue", sender: indexPath)
     }
     
     
+    
+    
+    
+// Segue :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navController = segue.destination as! UINavigationController
+        let vc = navController.topViewController as! LocationViewController
+        let indexPath = sender as! NSIndexPath
+        vc.destination = destinations[indexPath.row]
+        
+        
+//        let navigationController = segue.destination as! UINavigationController
+//        let localList = navigationController.topViewController as! LocalListViewController
+//        localList.delegate = self
+        
+    }
+    
+    
+    
+    
+    
+    
+//    showSegue
+    
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
 
 
 

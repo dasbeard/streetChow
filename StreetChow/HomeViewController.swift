@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate, LocalListDelegate {
+class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
 // Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     var locationManager: CLLocationManager?
@@ -79,8 +79,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, LocalList
         recenterImageOutlet.image = #imageLiteral(resourceName: "07_Target_Keyword-64")
         mapImageOutlet.image = #imageLiteral(resourceName: "parks-31-128")
 
-        
-        
         let camera = GMSCameraPosition.camera(withLatitude: 34.055458, longitude: -118.259326, zoom: 3.0)
         myMapViewOutlet.animate(to: camera)
         
@@ -110,13 +108,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, LocalList
             marker.title = destinations[pin].name
             marker.snippet = snip
             marker.map = myMapViewOutlet
-            
         }
-
     }
 
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -124,39 +118,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, LocalList
     }
 
     
-    
-// Delegate Methods :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    
-    func LocalList(names: String, location: String, distance: String) {
-        print("Testing")
-    }
-    
-    
+
 // Segue :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! UINavigationController
-        let localList = navigationController.topViewController as! LocalListViewController
-        localList.delegate = self
+        _ = navigationController.topViewController as! LocalListViewController
+//        localList.delegate = self
 
     }
-    
-    
-    
-    // Helper Functions :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    
-    // Set zoom level
-    //    func zoomLevel(){
-    //        let userLocation = self.myMapView.userLocation
-    //        let region = MKCoordinateRegionMakeWithDistance((userLocation.location?.coordinate)!, 2000, 2000)
-    //
-    //        myMapView.centerCoordinate = userLocation.location!.coordinate
-    //        myMapView.setRegion(region, animated: true)
-    //    }
-    
-    
-    
-    
-    
     
     
     
