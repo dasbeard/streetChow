@@ -7,21 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB74A243F8EE1CC10D25B62 /* Pods_StreetChow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08FCF92B1A181117816891 /* Pods_StreetChow.framework */; };
+		D70B27A51E678ED7007546BB /* Shelters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70B27A41E678ED7007546BB /* Shelters.swift */; };
 		D771CD801E64CA4500C27798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CD7F1E64CA4500C27798 /* AppDelegate.swift */; };
-		D771CD821E64CA4500C27798 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CD811E64CA4500C27798 /* ViewController.swift */; };
+		D771CD821E64CA4500C27798 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CD811E64CA4500C27798 /* HomeViewController.swift */; };
 		D771CD851E64CA4500C27798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D771CD831E64CA4500C27798 /* Main.storyboard */; };
 		D771CD871E64CA4500C27798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D771CD861E64CA4500C27798 /* Assets.xcassets */; };
 		D771CD8A1E64CA4500C27798 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D771CD881E64CA4500C27798 /* LaunchScreen.storyboard */; };
+		D771CD921E64DE0000C27798 /* LocalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CD911E64DE0000C27798 /* LocalListViewController.swift */; };
+		D771CD941E64DE3E00C27798 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CD931E64DE3E00C27798 /* LocationViewController.swift */; };
+		D771CD961E64EF0D00C27798 /* LocationCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CD951E64EF0D00C27798 /* LocationCustomCell.swift */; };
+		D771CDD71E6630F800C27798 /* LocalListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CDD61E6630F800C27798 /* LocalListDelegate.swift */; };
+		D7B0ABC21E6653690070999E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7B0ABC11E6653690070999E /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E83D61E3051627C435A2429 /* Pods-StreetChow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetChow.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreetChow/Pods-StreetChow.release.xcconfig"; sourceTree = "<group>"; };
+		4C08FCF92B1A181117816891 /* Pods_StreetChow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetChow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4F0B854AAC322DF66CD068 /* Pods-StreetChow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetChow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreetChow/Pods-StreetChow.debug.xcconfig"; sourceTree = "<group>"; };
+		D70B27A41E678ED7007546BB /* Shelters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shelters.swift; sourceTree = "<group>"; };
 		D771CD7C1E64CA4500C27798 /* StreetChow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetChow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D771CD7F1E64CA4500C27798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D771CD811E64CA4500C27798 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D771CD811E64CA4500C27798 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D771CD841E64CA4500C27798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D771CD861E64CA4500C27798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D771CD891E64CA4500C27798 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D771CD8B1E64CA4500C27798 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D771CD911E64DE0000C27798 /* LocalListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalListViewController.swift; sourceTree = "<group>"; };
+		D771CD931E64DE3E00C27798 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		D771CD951E64EF0D00C27798 /* LocationCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCustomCell.swift; sourceTree = "<group>"; };
+		D771CDD61E6630F800C27798 /* LocalListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalListDelegate.swift; sourceTree = "<group>"; };
+		D7B0ABC11E6653690070999E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BB74A243F8EE1CC10D25B62 /* Pods_StreetChow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0644151BCC78F3926A37576F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C08FCF92B1A181117816891 /* Pods_StreetChow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8309F24584410F779DC4779A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F0B854AAC322DF66CD068 /* Pods-StreetChow.debug.xcconfig */,
+				2E83D61E3051627C435A2429 /* Pods-StreetChow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D771CD731E64CA4500C27798 = {
 			isa = PBXGroup;
 			children = (
 				D771CD7E1E64CA4500C27798 /* StreetChow */,
 				D771CD7D1E64CA4500C27798 /* Products */,
+				8309F24584410F779DC4779A /* Pods */,
+				0644151BCC78F3926A37576F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +91,17 @@
 			isa = PBXGroup;
 			children = (
 				D771CD7F1E64CA4500C27798 /* AppDelegate.swift */,
-				D771CD811E64CA4500C27798 /* ViewController.swift */,
+				D771CD811E64CA4500C27798 /* HomeViewController.swift */,
+				D771CD911E64DE0000C27798 /* LocalListViewController.swift */,
+				D771CD931E64DE3E00C27798 /* LocationViewController.swift */,
 				D771CD831E64CA4500C27798 /* Main.storyboard */,
 				D771CD861E64CA4500C27798 /* Assets.xcassets */,
 				D771CD881E64CA4500C27798 /* LaunchScreen.storyboard */,
 				D771CD8B1E64CA4500C27798 /* Info.plist */,
+				D771CD951E64EF0D00C27798 /* LocationCustomCell.swift */,
+				D771CDD61E6630F800C27798 /* LocalListDelegate.swift */,
+				D7B0ABC11E6653690070999E /* Podfile */,
+				D70B27A41E678ED7007546BB /* Shelters.swift */,
 			);
 			path = StreetChow;
 			sourceTree = "<group>";
@@ -71,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D771CD8E1E64CA4500C27798 /* Build configuration list for PBXNativeTarget "StreetChow" */;
 			buildPhases = (
+				93E5A012C3BD2CA500AABF57 /* [CP] Check Pods Manifest.lock */,
 				D771CD781E64CA4500C27798 /* Sources */,
 				D771CD791E64CA4500C27798 /* Frameworks */,
 				D771CD7A1E64CA4500C27798 /* Resources */,
+				4A26094104064E09FEC809DD /* [CP] Embed Pods Frameworks */,
+				F4C6DFF0A14AE7A094578C17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,19 +171,73 @@
 			files = (
 				D771CD8A1E64CA4500C27798 /* LaunchScreen.storyboard in Resources */,
 				D771CD871E64CA4500C27798 /* Assets.xcassets in Resources */,
+				D7B0ABC21E6653690070999E /* Podfile in Resources */,
 				D771CD851E64CA4500C27798 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A26094104064E09FEC809DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreetChow/Pods-StreetChow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93E5A012C3BD2CA500AABF57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F4C6DFF0A14AE7A094578C17 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreetChow/Pods-StreetChow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D771CD781E64CA4500C27798 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D771CD821E64CA4500C27798 /* ViewController.swift in Sources */,
+				D771CD961E64EF0D00C27798 /* LocationCustomCell.swift in Sources */,
+				D771CD921E64DE0000C27798 /* LocalListViewController.swift in Sources */,
+				D771CDD71E6630F800C27798 /* LocalListDelegate.swift in Sources */,
+				D771CD821E64CA4500C27798 /* HomeViewController.swift in Sources */,
 				D771CD801E64CA4500C27798 /* AppDelegate.swift in Sources */,
+				D70B27A51E678ED7007546BB /* Shelters.swift in Sources */,
+				D771CD941E64DE3E00C27798 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +358,7 @@
 		};
 		D771CD8F1E64CA4500C27798 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C4F0B854AAC322DF66CD068 /* Pods-StreetChow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K87Q2GTANY;
@@ -272,6 +372,7 @@
 		};
 		D771CD901E64CA4500C27798 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E83D61E3051627C435A2429 /* Pods-StreetChow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K87Q2GTANY;
@@ -302,6 +403,7 @@
 				D771CD901E64CA4500C27798 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
