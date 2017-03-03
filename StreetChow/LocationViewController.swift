@@ -22,7 +22,7 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
     var lat = 0.0
     var long = 0.0
     var addr = ""
-
+    var wSite:String = ""
     
     
 // Outlets and Actions :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -31,10 +31,14 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         if sender.direction == .right{
             dismiss(animated: true, completion: nil)
         }
-        
     }
-
-
+    
+    @IBOutlet weak var websiteLabel: UILabel!
+    
+    @IBAction func openSiteButton(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "http://\(wSite)")!, options: [:], completionHandler: nil)
+    }
+    
     @IBOutlet weak var descriptionOutlet: UITextView!
     
     @IBOutlet weak var servicesOutlet: UITextView!
@@ -80,12 +84,6 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
 // UI Lifecycle :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    /// Swipe to go Back
-        
-        
-        
-        
         
         
     /// Tap Recognition
@@ -159,13 +157,18 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         newNumberLabel.text = showNumber
+        if let mySite = destination?.website{
+            wSite = mySite
+        }
+        
+        
     /// Setting Lables
         servicesOutlet.isEditable = false
         descriptionOutlet.isEditable = false
         servicesOutlet.text = destination?.services
         descriptionOutlet.text = destination?.desc
         title = destination?.name
-        
+        websiteLabel.text = destination?.website
         
         
     /// Fix tableview padding
