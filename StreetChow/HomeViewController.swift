@@ -15,20 +15,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 // Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     var locationManager: CLLocationManager?
     
-    var destinations = [Shelters(name:"Hippie Kitchen", location:CLLocationCoordinate2D(latitude: 34.040715, longitude: -118.242004), address: "821 E 6th St, Los Angeles, 90021", phone: "(213) 614-9615", website: "lacatholicworker.org", desc: "Some Description", services: "Some extra services", hours: ["Monday 1pm-5pm", "Tuesday 2pm-8pm"]),
+    var destinations = [Shelters(name:"Hippie Kitchen", location:CLLocationCoordinate2D(latitude: 34.040715, longitude: -118.242004), address: "821 E 6th St, Los Angeles, 90021", phone: 15555555555, website: "lacatholicworker.org", desc: "Some Description, Some Description, Some Description, Some Description, Some Description, Some Description, Some Description", services: "Some extra services, there are a lot of other services. Some extra services, there are a lot of other services. Some extra services, there are a lot of other services. Some extra services, there are a lot of other services. Some extra services, there are a lot of other services. Some extra services, there are a lot of other services. ", days:["Monday", "Tuesday", "Wednesday", "Thursday"], startTime: ["1:00pm", "2:00pm", "1:00pm", "4:00pm"], endTime: ["5:00pm", "8:00pm", "4:00pm", "7:30pm"]),
                         
-                        Shelters(name:"Eagle Rock Seventh-day Adventist Church", location:CLLocationCoordinate2D(latitude: 34.152369, longitude: -118.214568), address: "2322 Merton Ave, Los Angeles, 90041", phone: "(323) 257-5803", website: "seektobefamily.org", desc: "Some Description", services: "Some extra services", hours: ["Monday 1pm-5pm", "Tuesday 2pm-8pm"]),
+                        Shelters(name:"Seventh-day Adventist Church", location:CLLocationCoordinate2D(latitude: 34.152369, longitude: -118.214568), address: "2322 Merton Ave, Los Angeles, 90041", phone: 3232575803, website: "seektobefamily.org", desc: "Some Description", services: "Some extra services", days:["Monday", "Tuesday"], startTime: ["1:00pm", "2:00pm"], endTime: ["5:00pm", "8:00pm"]),
                         
-                        Shelters(name:"First Presbyterian Church", location:CLLocationCoordinate2D(latitude: 34.184897, longitude: -118.305010), address: "521 E Olive Ave, Burbank, 91501", phone: "(818) 842-5103", website: "burbankpres.org", desc: "Some Description", services: "Some extra services", hours: ["Monday 1pm-5pm", "Tuesday 2pm-8pm"]),
+                        Shelters(name:"First Presbyterian Church", location:CLLocationCoordinate2D(latitude: 34.184897, longitude: -118.305010), address: "521 E Olive Ave, Burbank, 91501", phone: 8188425103, website: "burbankpres.org", desc: "Some Description", services: "Some extra services", days:["Monday", "Tuesday", "Wednesday", "Thursday"], startTime: ["1:00pm", "2:00pm", "1:00pm", "4:00pm"], endTime: ["5:00pm", "8:00pm", "4:00pm", "7:30pm"]),
                         
-                        Shelters(name:"Burbank Temporary Aid Center", location:CLLocationCoordinate2D(latitude: 34.182730, longitude: -118.326058), address: "1304 W Burbank Blvd, Burbank, 91506", phone: "(818) 848-2822", website: "burbanktemporaryaidcenter.org", desc: "Some Description", services: "Some extra services", hours: ["Monday 1pm-5pm", "Tuesday 2pm-8pm"])
+                        Shelters(name:"Burbank Temporary Aid Center", location:CLLocationCoordinate2D(latitude: 34.182730, longitude: -118.326058), address: "1304 W Burbank Blvd, Burbank, 91506", phone: 8188482822, website: "burbanktemporaryaidcenter.org", desc: "Some Description", services: "Some extra services", days:["Monday", "Tuesday"], startTime: ["1:00pm", "2:00pm"], endTime: ["5:00pm", "8:00pm"])
                         ]
     
-    
-    
-    
-    
-//    var destinations = [Shelters]()
     
 // Outlets and Actins :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
@@ -47,10 +42,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func changeMapViewButton(_ sender: UIButton) {
         if myMapViewOutlet.mapType == .normal{
             myMapViewOutlet.mapType = .hybrid
-            mapImageOutlet.image = #imageLiteral(resourceName: "parks-25-128")
+            mapImageOutlet.image = #imageLiteral(resourceName: "StadardIcon")
         } else {
             myMapViewOutlet.mapType = .normal
-            mapImageOutlet.image = #imageLiteral(resourceName: "parks-31-128")
+            mapImageOutlet.image = #imageLiteral(resourceName: "HybridIcon")
         }
     }
     
@@ -76,8 +71,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         myMapViewOutlet.isMyLocationEnabled = true
         myMapViewOutlet.mapType = .normal
         
-        recenterImageOutlet.image = #imageLiteral(resourceName: "07_Target_Keyword-64")
-        mapImageOutlet.image = #imageLiteral(resourceName: "parks-31-128")
+        recenterImageOutlet.image = #imageLiteral(resourceName: "TargetIcon")
+        mapImageOutlet.image = #imageLiteral(resourceName: "HybridIcon")
 
         let camera = GMSCameraPosition.camera(withLatitude: 34.055458, longitude: -118.259326, zoom: 3.0)
         myMapViewOutlet.animate(to: camera)
@@ -99,16 +94,58 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             let marker = GMSMarker()
             
             var snip: String = ""
-            for day in 0 ..< destinations[pin].hours.count{
-                snip += String(destinations[pin].hours[day]) + " "
+            for day in 0 ..< destinations[pin].days.count{
+                if day > 0 {
+                    snip += ", " + String(destinations[pin].days[day]) + " " + String(destinations[pin].startTime[day]) + "-" + String(destinations[pin].endTime[day])
+                } else {
+                    snip += String(destinations[pin].days[day]) + " " + String(destinations[pin].startTime[day]) + "-" + String(destinations[pin].endTime[day])
+                }
             }
-            snip += "\n " + String(destinations[pin].phone)
+            snip += "\n " + "Phone Number: " + String(destinations[pin].phone)
             
             marker.position = destinations[pin].location
+            
             marker.title = destinations[pin].name
             marker.snippet = snip
             marker.map = myMapViewOutlet
         }
+        
+        
+        
+//        ///API Request
+//        let url = URL(string: "http://192.168.1.133:3000/sessions/mobile.json")
+//        // create a URLSession to handle the request tasks
+//        let session = URLSession.shared
+//        // create a "data task" to make the request and run completion handler
+//        let task = session.dataTask(with: url!, completionHandler: {
+//            data, response, error in
+//            
+//            do {
+//                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+//                    if let results = jsonResult["results"] as? NSArray {
+//                        for shelter in results {
+//                            let shelterDict = shelter as! NSDictionary
+//                            self.destinations.append(shelterDict[shelter] as! Shelters)
+//                        }
+//                    }
+//                    DispatchQueue.main.async {
+//                    }
+//                }
+//            } catch {
+//                print(error)
+//            }
+//
+//        })
+//
+//        task.resume()
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -129,6 +166,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
+    
+    
+    
+    
+
+
+
+
 }
 
 

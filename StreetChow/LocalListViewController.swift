@@ -24,6 +24,9 @@ class LocalListViewController: UITableViewController {
 
     
     
+
+    
+    
 // UI Lifecycle :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +50,15 @@ class LocalListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
         cell.textLabel?.text = destinations[indexPath.row].name
-        cell.detailTextLabel?.text = destinations[indexPath.row].phone
-        
+//        cell.detailTextLabel?.text = destinations[indexPath.row].address
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
+    
+
+    
+    
+    
     
     /// Segue when accessory is selected
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
@@ -79,9 +87,7 @@ class LocalListViewController: UITableViewController {
     
     
     
-    
-//    showSegue
-    
+ 
     
     
     

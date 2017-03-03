@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0BB74A243F8EE1CC10D25B62 /* Pods_StreetChow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C08FCF92B1A181117816891 /* Pods_StreetChow.framework */; };
 		D70B27A51E678ED7007546BB /* Shelters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70B27A41E678ED7007546BB /* Shelters.swift */; };
+		D70B27A71E68D7F5007546BB /* ButtonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70B27A61E68D7F5007546BB /* ButtonClass.swift */; };
 		D771CD801E64CA4500C27798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CD7F1E64CA4500C27798 /* AppDelegate.swift */; };
 		D771CD821E64CA4500C27798 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771CD811E64CA4500C27798 /* HomeViewController.swift */; };
 		D771CD851E64CA4500C27798 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D771CD831E64CA4500C27798 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		4C08FCF92B1A181117816891 /* Pods_StreetChow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetChow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4F0B854AAC322DF66CD068 /* Pods-StreetChow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetChow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreetChow/Pods-StreetChow.debug.xcconfig"; sourceTree = "<group>"; };
 		D70B27A41E678ED7007546BB /* Shelters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shelters.swift; sourceTree = "<group>"; };
+		D70B27A61E68D7F5007546BB /* ButtonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonClass.swift; sourceTree = "<group>"; };
 		D771CD7C1E64CA4500C27798 /* StreetChow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetChow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D771CD7F1E64CA4500C27798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D771CD811E64CA4500C27798 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				D771CDD61E6630F800C27798 /* LocalListDelegate.swift */,
 				D7B0ABC11E6653690070999E /* Podfile */,
 				D70B27A41E678ED7007546BB /* Shelters.swift */,
+				D70B27A61E68D7F5007546BB /* ButtonClass.swift */,
 			);
 			path = StreetChow;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				D771CD821E64CA4500C27798 /* HomeViewController.swift in Sources */,
 				D771CD801E64CA4500C27798 /* AppDelegate.swift in Sources */,
 				D70B27A51E678ED7007546BB /* Shelters.swift in Sources */,
+				D70B27A71E68D7F5007546BB /* ButtonClass.swift in Sources */,
 				D771CD941E64DE3E00C27798 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

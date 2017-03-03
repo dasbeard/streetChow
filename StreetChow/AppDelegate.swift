@@ -21,15 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var locationManger: CLLocationManager?
     
     var destinations: [Shelters]?
-    
-    
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         GMSServices.provideAPIKey("AIzaSyAr74fruN_LfCCEm1EHYAyohKzqIuISITA")
-        
-        
+  
         return true
     }
 
