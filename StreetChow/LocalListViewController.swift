@@ -50,7 +50,7 @@ class LocalListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
         cell.textLabel?.text = destinations[indexPath.row].name
-//        cell.detailTextLabel?.text = destinations[indexPath.row].address
+        cell.detailTextLabel?.text = destinations[indexPath.row].address
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
