@@ -112,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="1301.5999999999999" y="138.98050974512745"/>
         </scene>
-        <!--Local List View Controller-->
+        <!--Near By-->
         <scene sceneID="SHE-JB-6nR">
             <objects>
                 <tableViewController storyboardIdentifier="LocalListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RiH-Le-zj4" customClass="LocalListViewController" customModule="StreetChow" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,18 +125,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vFF-Us-L8M" id="qMP-dm-9os">
-                                    <rect key="frame" x="0.0" y="0.0" width="328" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="54.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q2a-0h-iof">
-                                            <rect key="frame" x="15" y="9" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QzW-tE-beu">
-                                            <rect key="frame" x="15" y="30" width="33" height="15"/>
+                                            <rect key="frame" x="15" y="30.5" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -151,7 +151,7 @@
                             <outlet property="delegate" destination="RiH-Le-zj4" id="Kms-Ue-48C"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NY0-oo-jLf">
+                    <navigationItem key="navigationItem" title="Near By" id="NY0-oo-jLf">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="6Hw-QC-EW7">
                             <connections>
                                 <action selector="backButtonPressed:" destination="RiH-Le-zj4" id="GoW-0N-RWi"/>
@@ -189,18 +189,18 @@
                                         <rect key="frame" x="0.0" y="1" width="343" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zeN-ng-VcC" id="eRW-hl-pck">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="snB-8M-Jn2">
-                                                    <rect key="frame" x="15" y="-1" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="0.0" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="buo-uG-YSu">
-                                                    <rect key="frame" x="55" y="-1" width="273" height="21"/>
+                                                    <rect key="frame" x="54.5" y="0.0" width="273.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -380,7 +380,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YbO-NR-ddO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9vb-sw-bs6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9vb-sw-bs6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -398,7 +398,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vLl-Gd-cYh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cAK-J1-SZ7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cAK-J1-SZ7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -416,7 +416,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Gf-h9-Mwr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="apb-K7-0HJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="apb-K7-0HJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

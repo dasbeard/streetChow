@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocalListViewController: UITableViewController {
+class LocalListViewController: UITableViewController, UISearchBarDelegate {
     
 // Variables ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -34,6 +34,8 @@ class LocalListViewController: UITableViewController {
         for shelter in appDel.destinations!{
             destinations.append(shelter)
         }
+        self.searchBarSetup()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,15 +45,26 @@ class LocalListViewController: UITableViewController {
     
 // Table View Methods :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return destinations.count
+        if shouldShowSearchResults{
+            return filteredArray.count
+        } else {
+            return destinations.count
+        }
     }
     /// Define Cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
-        cell.textLabel?.text = destinations[indexPath.row].name
-        cell.detailTextLabel?.text = destinations[indexPath.row].address
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        if shouldShowSearchResults{
+            cell.textLabel?.text = filteredArray[indexPath.row].name
+            cell.detailTextLabel?.text = filteredArray[indexPath.row].address
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        } else {
+            cell.textLabel?.text = destinations[indexPath.row].name
+            cell.detailTextLabel?.text = destinations[indexPath.row].address
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+        }
+        
         return cell
     }
     
@@ -76,15 +89,52 @@ class LocalListViewController: UITableViewController {
         let indexPath = sender as! NSIndexPath
         vc.destination = destinations[indexPath.row]
         
+    }
+    
+    
+    // SearchBar :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    let searchbar = UISearchBar(frame: CGRect(x:0,y:0,width:(UIScreen.main.bounds.width), height:40))
+    var filteredArray = [Shelters]()
+    var shouldShowSearchResults = false
+    
+    func searchBarSetup(){
+        searchbar.showsScopeBar = true
+        searchbar.delegate = self
+        searchbar.placeholder = "Search by name"
+        self.tableView.tableHeaderView = searchbar
+    }
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredArray = destinations.filter({ (Shelters: Shelters) -> Bool in
+            return Shelters.name.lowercased().range(of: searchText.lowercased()) != nil
+        })
         
-//        let navigationController = segue.destination as! UINavigationController
-//        let localList = navigationController.topViewController as! LocalListViewController
-//        localList.delegate = self
+        if searchText != "" {
+            shouldShowSearchResults = true
+            self.tableView.reloadData()
+        } else {
+            shouldShowSearchResults = false
+            self.tableView.reloadData()
+        }
+        
         
     }
     
     
     
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchbar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        shouldShowSearchResults = true
+        searchBar.endEditing(true)
+        self.tableView.reloadData()
+    }
+
     
     
  
